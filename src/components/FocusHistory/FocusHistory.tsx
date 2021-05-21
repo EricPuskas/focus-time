@@ -1,4 +1,4 @@
-import React, { Fragment } from "react";
+import React from "react";
 
 /**
  * Imports Native Components
@@ -10,6 +10,7 @@ import {
   SafeAreaView,
   ListRenderItem,
 } from "react-native";
+import { Icon } from "react-native-elements";
 
 /**
  * Imports Components
@@ -54,7 +55,7 @@ const FocusHistory: React.FC<FocusHistoryProps> = (props) => {
    * Defines the History Item component
    */
   const renderItem: ListRenderItem<FocusHistoryItem> = (props) => {
-    const { item } = props;
+    const { item, index } = props;
     const { status, subject } = item;
 
     /**
@@ -67,7 +68,22 @@ const FocusHistory: React.FC<FocusHistoryProps> = (props) => {
      */
     const styles = getStyles(stylesProps);
 
-    return <Text style={styles.historyItem}>{subject}</Text>;
+    const viewStyles: any[] = [styles.historyItem];
+
+    if (index === 0) viewStyles.push(styles.firstHistoryItem);
+    if (index === focusHistory.length - 1)
+      viewStyles.push(styles.lastHistoryItem);
+
+    return (
+      <View style={viewStyles}>
+        <Icon
+          name={status && status > 1 ? "cancel" : "check-circle"}
+          color={status && status > 1 ? "#ff6363" : "#51e18e"}
+          size={35}
+        />
+        <Text style={styles.historyItemText}>{subject}</Text>
+      </View>
+    );
   };
 
   /**
@@ -77,18 +93,19 @@ const FocusHistory: React.FC<FocusHistoryProps> = (props) => {
     if (focusHistory.length < 1) return null;
 
     return (
-      <Fragment>
-        <Text style={styles.title}>Things we've focused on</Text>
-        <FlatList
-          style={styles.flatList}
-          contentContainerStyle={styles.contentContainer}
-          data={focusHistory}
-          renderItem={renderItem}
-        />
+      <View style={{ flex: 1 }}>
+        <Text style={styles.title}>History:</Text>
+        <View style={{ height: 300 }}>
+          <FlatList
+            contentContainerStyle={styles.contentContainer}
+            data={focusHistory}
+            renderItem={renderItem}
+          />
+        </View>
         <View style={styles.clearContainer}>
           <RoundedButton size={75} title="Clear" onPress={clearHistory} />
         </View>
-      </Fragment>
+      </View>
     );
   };
 

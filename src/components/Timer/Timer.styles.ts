@@ -16,11 +16,13 @@ export const styles = StyleSheet.create({
     flex: 1,
   },
   title: {
-    color: theme.colors.white,
+    color: theme.palette.common.white,
+    fontSize: theme.fontSizes.lg,
     textAlign: "center",
   },
   task: {
-    color: theme.colors.white,
+    color: theme.palette.common.white,
+    fontSize: theme.fontSizes.lg,
     textAlign: "center",
     fontWeight: "bold",
   },
@@ -42,12 +44,16 @@ export const styles = StyleSheet.create({
   },
   focusContainer: {
     paddingTop: theme.spacing.xxl,
+    flexDirection: "row",
+    justifyContent: "center",
   },
   progressBarContainer: {
     paddingTop: theme.spacing.sm,
   },
   progressBar: {
     height: 10,
-    color: theme.colors.blue,
+  },
+  clearButton: {
+    backgroundColor: theme.palette.secondary.main,
   },
 });

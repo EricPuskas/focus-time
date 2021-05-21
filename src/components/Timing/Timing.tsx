@@ -34,7 +34,7 @@ const Timing: React.FC<TimingProps> = (props) => {
   const timingButtons = [
     { key: 0, title: "10", value: 10 },
     { key: 1, title: "15", value: 15 },
-    { key: 2, title: "20", value: 10 },
+    { key: 2, title: "20", value: 20 },
   ];
 
   /**

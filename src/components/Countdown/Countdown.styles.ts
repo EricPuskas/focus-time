@@ -15,8 +15,9 @@ export const styles = StyleSheet.create({
   text: {
     fontSize: theme.fontSizes.xxxl,
     fontWeight: "bold",
-    color: theme.colors.white,
+    color: theme.palette.common.white,
     padding: theme.spacing.lg,
-    backgroundColor: theme.colors.background,
+    borderRadius: 6,
+    backgroundColor: theme.palette.secondary.main,
   },
 });

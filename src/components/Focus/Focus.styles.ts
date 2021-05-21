@@ -1,7 +1,7 @@
 /**
  * Imports Native Components
  */
-import { StyleSheet } from "react-native";
+import { StyleSheet, Dimensions } from "react-native";
 
 /**
  * Imports the theme
@@ -13,7 +13,7 @@ import { theme } from "../../themes/theme";
  */
 export const styles = StyleSheet.create({
   container: {
-    flex: 0.3,
+    flex: 0.35,
   },
   innerContainer: {
     flex: 1,
@@ -21,20 +21,26 @@ export const styles = StyleSheet.create({
     justifyContent: "center",
   },
   title: {
-    color: theme.colors.white,
+    color: theme.palette.common.white,
     fontWeight: "bold",
     fontSize: theme.fontSizes.xl,
+    textAlign: "center",
+    margin: theme.spacing.md,
   },
   inputContainer: {
-    paddingTop: theme.spacing.md,
     flexDirection: "row",
     alignItems: "center",
+    paddingRight: 5,
+  },
+  buttonContainer: {
+    marginTop: theme.spacing.md,
+    flexDirection: "row",
+    justifyContent: "center",
   },
   textInput: {
     flex: 1,
-    marginRight: theme.spacing.md,
-    color: theme.colors.darkBlue,
-    backgroundColor: theme.colors.white,
+    color: theme.palette.primary.dark,
+    backgroundColor: theme.palette.common.white,
     padding: 15,
     borderRadius: 6,
     fontSize: theme.fontSizes.lg,

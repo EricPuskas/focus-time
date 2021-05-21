@@ -124,11 +124,15 @@ const Timer: React.FC<TimerProps> = (props) => {
         />
       </View>
       <View style={styles.focusContainer}>
-        <Text style={styles.title}>Focusing on:</Text>
+        <Text style={styles.title}>Focusing on: </Text>
         <Text style={styles.task}>{focusSubject}</Text>
       </View>
       <View style={styles.progressBarContainer}>
-        <ProgressBar progress={progress} style={styles.progressBar} />
+        <ProgressBar
+          color={theme.palette.secondary.main}
+          progress={progress}
+          style={styles.progressBar}
+        />
       </View>
       <View style={styles.buttonWrapper}>
         <Timing onChangeTime={changeTime} />
@@ -141,7 +145,12 @@ const Timer: React.FC<TimerProps> = (props) => {
         />
       </View>
       <View style={styles.clearSubject}>
-        <RoundedButton title="-" size={50} onPress={clearSubject} />
+        <RoundedButton
+          style={styles.clearButton}
+          title="-"
+          size={50}
+          onPress={clearSubject}
+        />
       </View>
     </View>
   );

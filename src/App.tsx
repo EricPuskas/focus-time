@@ -42,7 +42,7 @@ const STATUSES = {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: theme.colors.darkBlue,
+    backgroundColor: theme.palette.background.default,
   },
   focusContainer: { flex: 1 },
   safeAreaView: {

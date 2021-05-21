@@ -36,6 +36,8 @@ const Countdown: React.FC<CountdownProps> = (props) => {
    */
   const [millis, setMillis] = useState(0);
 
+  const [timerStarted, setTimerStarted] = useState(false);
+
   /**
    * Handles converting minutes to milliseconds
    */
@@ -47,24 +49,11 @@ const Countdown: React.FC<CountdownProps> = (props) => {
   const formatTime = (time: number) => (time < 10 ? `0${time}` : time);
 
   /**
-   * Handles counting down
-   */
-  const countDown = () => {
-    if (millis <= 0) {
-      clearInterval(interval.current);
-      onEnd();
-      return setMillis(millis);
-    } else {
-      const timeLeft = millis - 1000;
-      setMillis(timeLeft);
-    }
-  };
-
-  /**
    * Updates the milliseconds state
    */
   useEffect(() => {
     setMillis(minutesToMillis(minutes));
+    setTimerStarted(true);
   }, [minutes]);
 
   /**
@@ -84,15 +73,7 @@ const Countdown: React.FC<CountdownProps> = (props) => {
     }
 
     interval.current = setInterval(() => {
-      setMillis((time) => {
-        if (time === 0) {
-          clearInterval(interval.current);
-          onEnd();
-          return time;
-        }
-        const timeLeft = time - 1000;
-        return timeLeft;
-      });
+      setMillis((time) => time - 1000);
     }, 1000);
 
     return () => clearInterval(interval.current);
@@ -107,6 +88,13 @@ const Countdown: React.FC<CountdownProps> = (props) => {
    * Defines the seconds based on milliseconds
    */
   const seconds = Math.floor(millis / 1000) % 60;
+
+  useEffect(() => {
+    if (millis === 0 && timerStarted) {
+      clearInterval(interval.current);
+      onEnd();
+    }
+  }, [millis, timerStarted]);
 
   return (
     <Text style={styles.text}>

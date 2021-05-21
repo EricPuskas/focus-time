@@ -61,14 +61,22 @@ const Focus: React.FC<FocusProps> = (props) => {
   return (
     <View style={styles.container}>
       <View style={styles.innerContainer}>
-        <Text style={styles.title}>What would you like to focus on?</Text>
+        <Text style={styles.title}> Focus Time </Text>
         <View style={styles.inputContainer}>
           <TextInput
             style={styles.textInput}
             onChange={handleInputChange}
-            underlineColorAndroid={"rgba(0,0,0,0)"}
+            selectionColor={theme.palette.primary.dark}
+            underlineColorAndroid="transparent"
           />
-          <RoundedButton size={50} title="+" onPress={handleButtonPress} />
+        </View>
+        <View style={styles.buttonContainer}>
+          <RoundedButton
+            size={85}
+            fontSize={25}
+            title="Start"
+            onPress={handleButtonPress}
+          />
         </View>
       </View>
     </View>

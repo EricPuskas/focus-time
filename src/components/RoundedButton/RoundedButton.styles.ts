@@ -29,11 +29,12 @@ export const styles = (props: StylesProps) => {
       height: size,
       alignItems: "center",
       justifyContent: "center",
-      borderColor: theme.colors.white,
+      borderColor: theme.palette.secondary.dark,
       borderWidth: 2,
+      backgroundColor: theme.palette.secondary.main,
     },
     text: {
-      color: theme.colors.white,
+      color: theme.palette.common.white,
       fontSize: fontSize || theme.fontSizes.md,
     },
   });
