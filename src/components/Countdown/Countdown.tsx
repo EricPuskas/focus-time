@@ -24,7 +24,7 @@ export interface CountdownProps {
  * Displays the component
  */
 const Countdown: React.FC<CountdownProps> = (props) => {
-  const { minutes = 0.1, isPaused, onProgress, onEnd } = props;
+  const { minutes = 0.09, isPaused, onProgress, onEnd } = props;
 
   /**
    * Initializes the interval

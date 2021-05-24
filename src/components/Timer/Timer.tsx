@@ -44,7 +44,7 @@ export interface TimerProps {
 /**
  * Defines the default time
  */
-const DEFAULT_TIME = 0.1;
+const DEFAULT_TIME = 0.09;
 
 /**
  * Displays the component
@@ -139,15 +139,16 @@ const Timer: React.FC<TimerProps> = (props) => {
       </View>
       <View style={styles.buttonWrapper}>
         <RoundedButton
+          fontSize={25}
           title={isStarted ? "Pause" : "Start"}
           onPress={toggleTimer}
-          fontSize={theme.fontSizes.xl}
         />
       </View>
       <View style={styles.clearSubject}>
         <RoundedButton
           style={styles.clearButton}
-          title="-"
+          textStyle={styles.clearButtonText}
+          title="Exit"
           size={50}
           onPress={clearSubject}
         />

@@ -103,7 +103,12 @@ const FocusHistory: React.FC<FocusHistoryProps> = (props) => {
           />
         </View>
         <View style={styles.clearContainer}>
-          <RoundedButton size={75} title="Clear" onPress={clearHistory} />
+          <RoundedButton
+            size={85}
+            fontSize={20}
+            title="Clear"
+            onPress={clearHistory}
+          />
         </View>
       </View>
     );

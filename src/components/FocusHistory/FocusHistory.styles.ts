@@ -40,7 +40,7 @@ export const styles = (props?: StylesProps) => {
       borderTopRightRadius: 4,
     },
     lastHistoryItem: {
-      borderBottomWidth: 0,
+      borderBottomWidth: 2,
       borderBottomLeftRadius: 4,
       borderBottomRightRadius: 4,
     },
@@ -62,10 +62,6 @@ export const styles = (props?: StylesProps) => {
     contentContainer: {
       flexGrow: 1,
       alignItems: "center",
-      // borderWidth: 2,
-      // borderColor: theme.palette.secondary.dark,
-      // backgroundColor: theme.palette.secondary.light,
-      // borderRadius: 6,
       marginTop: theme.spacing.md,
       paddingVertical: 30,
     },

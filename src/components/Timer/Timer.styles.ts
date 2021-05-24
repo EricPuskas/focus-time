@@ -54,6 +54,10 @@ export const styles = StyleSheet.create({
     height: 10,
   },
   clearButton: {
-    backgroundColor: theme.palette.secondary.main,
+    backgroundColor: "#ff6363",
+  },
+  clearButtonText: {
+    color: theme.palette.primary.dark,
+    fontWeight: "bold",
   },
 });

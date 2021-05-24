@@ -45,7 +45,12 @@ const Timing: React.FC<TimingProps> = (props) => {
       const handlePress = () => onChangeTime(button.value);
       return (
         <View key={button.key} style={styles.timingButton}>
-          <RoundedButton size={75} title={button.title} onPress={handlePress} />
+          <RoundedButton
+            size={75}
+            fontSize={20}
+            title={button.title}
+            onPress={handlePress}
+          />
         </View>
       );
     });

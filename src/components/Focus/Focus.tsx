@@ -66,14 +66,15 @@ const Focus: React.FC<FocusProps> = (props) => {
           <TextInput
             style={styles.textInput}
             onChange={handleInputChange}
-            selectionColor={theme.palette.primary.dark}
+            selectionColor={theme.palette.primary.light}
             underlineColorAndroid="transparent"
+            autoCorrect={false}
           />
         </View>
         <View style={styles.buttonContainer}>
           <RoundedButton
             size={85}
-            fontSize={25}
+            fontSize={20}
             title="Start"
             onPress={handleButtonPress}
           />
